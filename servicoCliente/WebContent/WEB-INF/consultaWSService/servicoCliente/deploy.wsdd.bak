@@ -1,0 +1,28 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from consultaWSService WSDL service -->
+
+  <service name="consultaWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://servicoCliente"/>
+      <parameter name="wsdlServiceElement" value="consultaWSService"/>
+      <parameter name="schemaQualified" value="http://servicoCliente"/>
+      <parameter name="wsdlServicePort" value="consultaWS"/>
+      <parameter name="className" value="servicoCliente.ConsultaWSSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="consultaWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="consulta" qname="operNS:consulta" xmlns:operNS="http://servicoCliente" returnQName="retNS:consultaReturn" xmlns:retNS="http://servicoCliente" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="consulta"/>
+
+  </service>
+</deployment>

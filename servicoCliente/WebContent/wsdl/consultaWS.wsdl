@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://servicoCliente" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://servicoCliente" xmlns:intf="http://servicoCliente" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://servicoCliente" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="consulta">
+    <complexType/>
+   </element>
+   <element name="consultaResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="consultaRequest">
+
+      <wsdl:part element="impl:consulta" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaResponse">
+
+      <wsdl:part element="impl:consultaResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="consultaWS">
+
+      <wsdl:operation name="consulta">
+
+         <wsdl:input message="impl:consultaRequest" name="consultaRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaResponse" name="consultaResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="consultaWSSoapBinding" type="impl:consultaWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="consulta">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="consultaWSService">
+
+      <wsdl:port binding="impl:consultaWSSoapBinding" name="consultaWS">
+
+         <wsdlsoap:address location="http://localhost:8080/servicoCliente/services/consultaWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
