@@ -33,7 +33,14 @@
   <ns1:parameter name="className" value="org.apache.axis.Version"/>
  </ns1:service>
  <ns1:service name="consultaWS" provider="java:RPC" style="wrapped" use="literal">
-  <ns2:operation name="consulta" qname="ns1:consulta" returnQName="ns1:consultaReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://servicoCliente" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/"/>
+  <ns2:operation name="consulta" qname="ns1:consulta" returnQName="ns1:consultaReturn" returnType="xsd:string" soapAction="" xmlns:ns1="http://servicoCliente" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xml.apache.org/axis/wsdd/">
+   <ns2:parameter qname="ns1:TRANS_ID" type="xsd:long"/>
+   <ns2:parameter qname="ns1:TRANS_CUST_ID" type="xsd:long"/>
+   <ns2:parameter qname="ns1:TRANS_ACC_ID" type="xsd:long"/>
+   <ns2:parameter qname="ns1:TRANS_VALUE" type="xsd:double"/>
+   <ns2:parameter qname="ns1:TRANS_DATE" type="xsd:string"/>
+   <ns2:parameter qname="ns1:TRANS_DESCRIPTION" type="xsd:string"/>
+  </ns2:operation>
   <ns1:parameter name="allowedMethods" value="consulta"/>
   <ns1:parameter name="typeMappingVersion" value="1.2"/>
   <ns1:parameter name="wsdlPortType" value="consultaWS"/>

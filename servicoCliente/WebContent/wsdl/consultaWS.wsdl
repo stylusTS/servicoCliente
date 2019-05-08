@@ -5,7 +5,16 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
  <wsdl:types>
   <schema elementFormDefault="qualified" targetNamespace="http://servicoCliente" xmlns="http://www.w3.org/2001/XMLSchema">
    <element name="consulta">
-    <complexType/>
+    <complexType>
+     <sequence>
+      <element name="TRANS_ID" type="xsd:long"/>
+      <element name="TRANS_CUST_ID" type="xsd:long"/>
+      <element name="TRANS_ACC_ID" type="xsd:long"/>
+      <element name="TRANS_VALUE" type="xsd:double"/>
+      <element name="TRANS_DATE" type="xsd:string"/>
+      <element name="TRANS_DESCRIPTION" type="xsd:string"/>
+     </sequence>
+    </complexType>
    </element>
    <element name="consultaResponse">
     <complexType>

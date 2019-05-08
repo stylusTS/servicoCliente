@@ -11,6 +11,12 @@
       <parameter name="wsdlPortType" value="consultaWS"/>
       <parameter name="typeMappingVersion" value="1.2"/>
       <operation xmlns:operNS="http://servicoCliente" xmlns:retNS="http://servicoCliente" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="consulta" qname="operNS:consulta" returnQName="retNS:consultaReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_ID" type="tns:long"/>
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_CUST_ID" type="tns:long"/>
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_ACC_ID" type="tns:long"/>
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_VALUE" type="tns:double"/>
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_DATE" type="tns:string"/>
+        <parameter xmlns:pns="http://servicoCliente" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:TRANS_DESCRIPTION" type="tns:string"/>
       </operation>
       <parameter name="allowedMethods" value="consulta"/>
 
